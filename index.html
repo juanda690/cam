@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/index.html">
+
+</head>
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Camila ❤️</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #ffc3a0, #ffafbd);
+            font-family: 'Dancing Script', cursive;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .carta {
+            width: 300px;
+            height: 400px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.5s;
+            transform-style: preserve-3d;
+            transform-origin: left center;
+        }
+
+        .carta.abierta {
+            transform: rotateY(-180deg);
+        }
+
+        .frente, .atras {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 10px;
+        }
+
+        .frente {
+            background: white;
+        }
+
+        .atras {
+            background: #fff0f5;
+            transform: rotateY(180deg);
+            text-align: center;
+        }
+
+        .corazon {
+            width: 100px;
+            height: 100px;
+            background: #ff6b6b;
+            position: relative;
+            transform: rotate(45deg);
+            margin: 30px auto;
+            animation: palpitar 1.5s infinite;
+        }
+
+        .corazon:before, .corazon:after {
+            content: "";
+            width: 100px;
+            height: 100px;
+            background: #ff6b6b;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .corazon:before {
+            top: -50px;
+            left: 0;
+        }
+
+        .corazon:after {
+            top: 0;
+            left: -50px;
+        }
+
+        @keyframes palpitar {
+            0% { transform: rotate(45deg) scale(1); }
+            50% { transform: rotate(45deg) scale(1.1); }
+            100% { transform: rotate(45deg) scale(1); }
+        }
+
+        h1, p {
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .par{
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            font-family: 'Dancing Script', cursive;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="carta" id="carta">
+        <div class="frente">
+            <h1>Para Camila ❤️</h1>
+            <div class="corazon"></div>
+            <p>Toca la carta para abrirla</p>
+        </div>
+        <div class="atras">
+            <h2>Mi mensaje para ti</h2>
+            <p>bueno camila sabes que para mi usted es mi todo y una persona muy espacial para mi, te lo eh hecho saber casi siempre, bueno te hice esto para decirte algo que te eh querido decir pero queria hacer algo especial para que supieras lo especial que eres pa mi asi que pulsa el boton</p>
+            <a  class="par"   href="/cam.html">pulsa para proponerte algo</a>
+        </div>
+    </div>
+
+    <script>
+        const carta = document.getElementById('carta');
+        carta.addEventListener('click', function() {
+            this.classList.toggle('abierta');
+        });
+    </script>
+</body>
+</html>
